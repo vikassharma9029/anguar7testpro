@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to User List Panel
+  </h1>
+</div>
+<h2>Below is the user list of the organisation  </h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Dept.</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let info of data">
+    <td>{{info.name | titlecase}} {{info.last_name}}</td>
+    <td>{{info.email | titlecase}}</td>
+    <td>{{info.role | titlecase}}</td>
+    <td>{{info.dept | titlecase}}</td>
+    <td> <a (click) = "editUser(info.id,$event)"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a> | 
+      <a (click) = "deleteUser(info.id,$this)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a></td>
+  </tr>
+
+<!-- <a class="btn btn-primary" routerLink="/singup">Move To Singup</a> -->

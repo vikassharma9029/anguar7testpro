@@ -1,0 +1,58 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+<!-- <link rel="stylesheet" href="/lib/styles/snippets-1.7.css" /> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<div class="signup-form">
+  <form method="post" [formGroup]="userRegisterForm" (ngSubmit)="signup(userRegisterForm.value)">
+    <h2>{{type}}</h2>
+    <input type="hidden" formControlName="user_id" >
+    <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+    <div class="form-group">
+      <input type="text" formControlName='first_name' class="form-control" placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <input type="text" formControlName='last_name' class="form-control" placeholder="Last Name"></div>
+
+    <div class="form-group">
+      <input type="email" formControlName='email' class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="text" formControlName='dept' class="form-control" placeholder="Department">
+    </div>
+
+    <div class="form-group">
+      <select class="form-control" formControlName="role" ngModel>
+          <option value="" disabled>Choose a roles</option>
+          <option *ngFor="let role of roles" [ngValue]="role">
+            {{ role }}
+          </option>  
+        </select>
+  </div>
+
+    <!-- <div class="form-group">
+      <input type="text" formControlName='role' class="form-control" placeholder="Role">
+    </div> -->
+
+    
+
+    <!-- <select [compareWith]="compareFn"  [formControl]="selectedCountriesControl">
+        <option *ngFor="let country of countries" [ngValue]="country">
+            {{country.name}}
+        </option>
+    </select> -->
+    <!-- <div class="form-group">
+      <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+    </div> -->
+    <!-- <div class="form-group">
+      <input type="file">
+    </div> -->
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-success btn-lg btn-block" value={{buttonAction}}>
+    </div>
+    <!-- <div class="text-center"><a class="btn btn-danger btn-lg btn-block back" routerLink="/">Move To Listing</a></div> -->
+  </form>
+  <!-- <div class="text-center">Already have an account? <a href="#">Sign in</a></div> -->
+
+</div>
